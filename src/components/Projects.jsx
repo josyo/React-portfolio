@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { projects } from "../data/data";
+import ProjectShowcase from "./ui/ProjectShowcase";
 
 export default function Projects() {
   return (
@@ -15,17 +16,11 @@ export default function Projects() {
 
       {/* Header */}
       <div className="text-center mb-24">
-        <p className="text-cyan-400 text-sm font-medium mb-3">
-          FEATURED WORK
-        </p>
-
-        <h2 className="text-4xl md:text-5xl font-bold">
-          Selected Projects
-        </h2>
-
+        <p className="text-cyan-400 text-sm font-medium mb-3">FEATURED WORK</p>
+        <h2 className="text-4xl md:text-5xl font-bold">Selected Projects</h2>
         <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-          A collection of applications focused on scalability,
-          performance and user experience.
+          A collection of applications focused on scalability, performance and
+          user experience.
         </p>
       </div>
 
@@ -40,93 +35,36 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className={`
-                grid
-                lg:grid-cols-2
-                gap-10
-                lg:gap-20
-                items-center
-                min-h-[80vh]
-              `}
+              className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center min-h-[80vh]"
             >
               {/* IMAGE */}
-              <div
-                className={`
-                  ${reverse ? "lg:order-2" : ""}
-                `}
-              >
+              <div className={reverse ? "lg:order-2" : ""}>
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="
-                    relative
-                    rounded-2xl
-                    overflow-hidden
-                    border
-                    border-white/10
-                    bg-white/5
-                    backdrop-blur-xl
-                  "
+                  // On mobile: no card chrome — phone stands alone with its own shadow
+                  // On desktop (md+): full browser-card treatment
+                  className="relative md:rounded-2xl md:overflow-hidden md:border md:border-white/10 md:bg-white/5 md:backdrop-blur-xl"
                 >
-                  {/* Browser Bar */}
-                  <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-slate-900/50">
-                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <div className="w-3 h-3 rounded-full bg-green-400" />
-                  </div>
-
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="
-                      w-full
-                      h-[250px]
-                      sm:h-[350px]
-                      lg:h-[450px]
-                      object-cover
-                    "
+                  <ProjectShowcase
+                    desktopImages={project.desktopImages}
+                    mobileImages={project.mobileImages}
                   />
 
-                  {/* Hover Overlay */}
-                  <div
-                    className="
-                      absolute inset-0
-                      bg-black/70
-                      opacity-0
-                      hover:opacity-100
-                      transition
-                      duration-300
-                      flex
-                      items-center
-                      justify-center
-                      gap-4
-                    "
-                  >
+                  {/* Hover overlay — desktop only; touch devices don't have hover */}
+                  <div className="hidden md:flex absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 transition duration-300 items-center justify-center gap-4">
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="
-                        px-5 py-3
-                        rounded-lg
-                        bg-cyan-500
-                        text-black
-                        font-medium
-                      "
+                      className="px-5 py-3 rounded-lg bg-cyan-500 text-black font-medium"
                     >
                       Live Demo
                     </a>
-
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="
-                        px-5 py-3
-                        rounded-lg
-                        border
-                        border-white/20
-                        bg-white/10
-                      "
+                      className="px-5 py-3 rounded-lg border border-white/20 bg-white/10"
                     >
                       GitHub
                     </a>
@@ -135,17 +73,11 @@ export default function Projects() {
               </div>
 
               {/* CONTENT */}
-              <div
-                className={`
-                  ${reverse ? "lg:order-1" : ""}
-                  space-y-6
-                `}
-              >
+              <div className={`${reverse ? "lg:order-1" : ""} space-y-6`}>
                 <div>
                   <p className="text-cyan-400 text-sm font-medium mb-2">
                     Project {index + 1}
                   </p>
-
                   <h3 className="text-3xl md:text-4xl font-bold">
                     {project.title}
                   </h3>
@@ -160,16 +92,7 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="
-                        px-3
-                        py-1.5
-                        rounded-lg
-                        border
-                        border-white/10
-                        bg-white/5
-                        text-sm
-                        text-slate-300
-                      "
+                      className="px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-sm text-slate-300"
                     >
                       {tech}
                     </span>
@@ -182,28 +105,15 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="
-                      px-5 py-3
-                      rounded-lg
-                      bg-cyan-500
-                      text-black
-                      font-medium
-                    "
+                    className="px-5 py-3 rounded-lg bg-cyan-500 text-black font-medium"
                   >
                     Launch Demo
                   </a>
-
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="
-                      px-5 py-3
-                      rounded-lg
-                      border
-                      border-white/10
-                      bg-white/5
-                    "
+                    className="px-5 py-3 rounded-lg border border-white/10 bg-white/5"
                   >
                     Source Code
                   </a>
