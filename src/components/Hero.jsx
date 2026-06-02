@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-import { files } from "../data/CodeExamples"
+import { files } from "../data/data"
 
 
 export default function Hero() {

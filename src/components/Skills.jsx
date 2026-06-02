@@ -1,23 +1,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { skillGroups } from "../data/data";
 
-const skillGroups = [
-  {
-    title: "Frontend",
-    color: "cyan",
-    skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-  },
-  {
-    title: "Backend",
-    color: "purple",
-    skills: ["Node.js", "NestJS", "Express", "PostgreSQL"],
-  },
-  {
-    title: "Tools & DevOps",
-    color: "blue",
-    skills: ["Git", "Docker", "Vercel", "REST APIs"],
-  },
-];
 
 export default function Skills() {
   return (
