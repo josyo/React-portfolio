@@ -49,7 +49,7 @@ export const projects = [
     title: "Job Application Tracker",
     description:
       "A full-stack platform for tracking applications, interviews and offers. Built to streamline the job search process with analytics and progress tracking.",
-    image: "/projects/job-tracker.png",
+    image: "/public/job-tracker.png",
     demo: "#",
     github: "#",
     tech: ["Next.js", "Tailwind", "Supabase", "ShadCN"],
