@@ -21,13 +21,9 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section className="relative py-24 px-6 sm:px-10 lg:px-20 bg-slate-950 text-white overflow-hidden">
-
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-cyan-500/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-[-120px] right-[-120px] w-[350px] h-[350px] bg-purple-500/10 blur-3xl rounded-full" />
-      </div>
+    <section 
+      id="skills"
+      className="relative py-24 px-6 sm:px-10 lg:px-20 bg-slate-950 text-white overflow-hidden">
 
       {/* Header */}
       <motion.div
@@ -71,7 +67,7 @@ export default function Skills() {
               />
 
               {/* Title */}
-              <h3 className="text-lg font-semibold mb-4">
+              <h3 className="text-lg font-semibold mb-4 text-white">
                 {group.title}
               </h3>
 

@@ -20,19 +20,19 @@ export default function Navbar() {
                 {/*Nav Links*/}
                 <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a 
-                        href="#features" 
+                        href="#skills" 
                         className="text-gray-300 hover:text-white text-sm lg:text-base"
                     >
-                        Features
+                        Skills
                     </a>
                     <a 
-                        href="#pricing" 
+                        href="#projects" 
                         className="text-gray-300 hover:text-white text-sm lg:text-base"
                     >
-                        Pricing
+                        Projects
                     </a>
-                    <a href="#testimonials" className="text-gray-300 hover:text-white text-sm lg:text-base">
-                        Testimonials
+                    <a href="#contact-me" className="text-gray-300 hover:text-white text-sm lg:text-base">
+                        Contact Me
                     </a>
                 </div>
                 <button 
@@ -50,7 +50,7 @@ export default function Navbar() {
             <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800 animate-in slide-in-from-top duration-300">
                 <div className="px-4 py-5 space-y-2">
                     <a
-                        href="#features"
+                        href="#skills"
                         onClick={() => setMobileMenuIsOpen(false)}
                         className="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-slate-800/60 transition-all duration-200"
                     >
@@ -58,19 +58,19 @@ export default function Navbar() {
                     </a>
 
                     <a
-                        href="#pricing"
+                        href="#projects"
                         onClick={() => setMobileMenuIsOpen(false)}
                         className="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-slate-800/60 transition-all duration-200"
                     >
-                        Pricing
+                        Projects
                     </a>
 
                     <a
-                        href="#testimonials"
+                        href="#contact-me"
                         onClick={() => setMobileMenuIsOpen(false)}
                         className="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-slate-800/60 transition-all duration-200"
                     >
-                        Testimonials
+                        Contact Me
                     </a>
                 </div>
             </div>
