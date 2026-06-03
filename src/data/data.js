@@ -51,9 +51,9 @@ export const projects = [
       "A full-stack platform for tracking applications, interviews and offers. Built to streamline the job search process with analytics and progress tracking.",
 
     desktopImages: [
-      "/projects/jobtracker/desktop-1.png",
-      "/projects/jobtracker/desktop-2.png",
-      "/projects/jobtracker/desktop-3.png",
+      "/job-tracker-1.png",
+      "/job-tracker-2.png",
+      "job-tracker-3.png",
     ],
 
     mobileImages: [
@@ -70,7 +70,14 @@ export const projects = [
     title: "E-Commerce Platform",
     description:
       "Modern storefront experience featuring product discovery, filtering, responsive design and optimized performance.",
-    image: "/projects/ecommerce.png",
+
+    desktopImages: [
+      "/job-tracker.png",                          // was /public/job-tracker.png
+      "/projects/jobtracker/desktop-2.png",
+      "/projects/jobtracker/desktop-3.png",
+    ],
+    mobileImages: [],                               // add mobile shots when ready
+
     demo: "#",
     github: "#",
     tech: ["React", "Tailwind", "Framer Motion"],
@@ -79,7 +86,10 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "Developer portfolio focused on performance, motion design and modern user experience principles.",
-    image: "/projects/portfolio.png",
+
+    desktopImages: ["/projects/portfolio.png"],    // was image:
+    mobileImages: [],                               // add mobile shots when ready
+
     demo: "#",
     github: "#",
     tech: ["React", "Tailwind", "Framer Motion"],
