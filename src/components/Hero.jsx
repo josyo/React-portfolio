@@ -110,30 +110,48 @@ export default function Hero() {
 
                   
 
-                  {/* CTA */}
-                  <div className="flex flex-row justify-center items-center gap-3">
-                     <motion.button 
-                     whileHover={{ scale: 1.03 }}
-                     whileTap={{ scale: 0.97 }}
-                     transition={{ duration: 0.6 }}
-                     className="
-                        px-3 py-2 text-xs sm:text-sm
-                        rounded-lg bg-cyan-500 hover:bg-cyan-400 transition text-black font-semibold
-                        whitespace-nowrap
-                        ">
-                        View Projects
-                     </motion.button>
+                 <div className="flex justify-center lg:justify-start">
+                     <div className="flex items-center gap-3 p-2 rounded-2xl bg-white/5 backdrop-blur-sm">
+                        
+                        <a href="#projects">
+                           <motion.button
+                              onClick={() => {
 
-                     <motion.button 
-                     whileHover={{ scale: 1.03 }}
-                     whileTap={{ scale: 0.97 }}
-                     className="
-                        px-3 py-2 text-xs sm:text-sm
-                        rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition
-                        whitespace-nowrap
-                        ">
-                        Contact Me
-                     </motion.button>
+                              }}
+                              whileHover={{ scale: 1.03 }}
+                              whileTap={{ scale: 0.97 }}
+                              className="
+                                 px-5 py-2.5
+                                 rounded-xl
+                                 bg-cyan-500
+                                 hover:bg-cyan-400
+                                 text-black
+                                 font-semibold
+                                 transition
+                                 shadow-[0_0_25px_rgba(34,211,238,0.25)]
+                              "
+                           >
+                              View Projects
+                           </motion.button>
+                        </a>
+
+                        <a href="#contact-me">
+                           <motion.button
+                              whileHover={{ scale: 1.03 }}
+                              whileTap={{ scale: 0.97 }}
+                              className="
+                                 px-5 py-2.5
+                                 rounded-xl
+                                 border-white/10
+                                 bg-transparent
+                                 hover:bg-white/5
+                                 transition
+                              "
+                           >
+                              Contact Me
+                           </motion.button>
+                        </a>
+                     </div>
                   </div>
 
                   {/* Terminal Status */}
