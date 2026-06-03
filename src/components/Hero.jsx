@@ -56,7 +56,7 @@ export default function Hero() {
          
          
          <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16">
-            <div className="grid lg:grid-cols-[0.95fr_1.55fr] gap-12 lg:gap-20 items-stretch w-full">
+            <div className="grid xl:grid-cols-[1fr_1.2fr] 2xl:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-stretch w-full">
 
                {/* LEFT CONTENT */}
                <motion.div
@@ -66,13 +66,63 @@ export default function Hero() {
                   className="space-y-8 text-center lg:text-left"
                >
 
-                  {/* Badge */}
-                  <div>
-                     <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 text-sm font-medium">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                        Software Engineer
-                     </span>
-                  </div>
+                  {/* PROFILE */}
+<div className="flex flex-col sm:flex-row items-center lg:items-start gap-5">
+
+   {/* Photo */}
+   <div className="relative flex-shrink-0">
+      {/* Glow */}
+      <div className="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full scale-110" />
+
+      <img
+         src="/profile-photo.png"
+         alt="Joseph Olakunle"
+         className="
+            relative
+            h-24 w-24
+            sm:h-28 sm:w-28
+            rounded-3xl
+            object-cover
+            border border-white/10
+            shadow-[0_0_30px_rgba(34,211,238,0.15)]
+         "
+      />
+   </div>
+
+   {/* Text */}
+   <div className="space-y-3 text-center sm:text-left">
+
+      <div>
+         <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
+            Joseph Olakunle
+         </h3>
+      </div>
+
+      {/* Role Badge */}
+      <div>
+         <span
+            className="
+               inline-flex
+               items-center
+               gap-2
+               px-4
+               py-2
+               rounded-full
+               bg-cyan-500/10
+               text-cyan-400
+               text-sm
+               font-medium
+               border
+               border-cyan-500/10
+            "
+         >
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            Full-Stack Software Engineer
+         </span>
+      </div>
+   </div>
+</div>
+
 
                   {/* Heading */}
                   <motion.div
@@ -92,7 +142,7 @@ export default function Hero() {
                            hidden: { opacity: 0, y: 10 },
                            show: { opacity: 1, y: 0 },
                         }}
-                        className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
+                        className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight tracking-tight space-y-2">
                         Building
                         <span className="block text-cyan-400">
                            scalable systems
@@ -101,11 +151,6 @@ export default function Hero() {
                         
                      </h1>
 
-                     <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Full-stack developer focused on crafting performant
-                        applications, scalable backend architectures and
-                        intuitive user experiences with modern technologies.
-                     </p>
                   </motion.div>
 
                   
@@ -165,13 +210,21 @@ export default function Hero() {
                      </div>
 
                      <div className="rounded-xl bg-white/5 backdrop-blur-sm p-4">
-                        <p className="text-2xl font-bold text-white">5+</p>
-                        <p className="text-xs text-slate-400">Technologies</p>
+                        <p className="text-lg font-bold text-white">
+                           NestJS
+                        </p>
+                        <p className="text-xs text-slate-400">
+                           React • TypeScript
+                        </p>
                      </div>
 
                      <div className="rounded-xl bg-white/5 backdrop-blur-sm p-4">
-                        <p className="text-2xl font-bold text-white">∞</p>
-                        <p className="text-xs text-slate-400">Learning</p>
+                        <p className="text-lg font-bold text-white">
+                           Available
+                        </p>
+                        <p className="text-xs text-slate-400">
+                           Open to opportunities
+                        </p>
                      </div>
                   </div>
                </motion.div>
@@ -181,9 +234,16 @@ export default function Hero() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay: 0.35 }}
-                  whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
+                  whileHover={{ y: -4, scale: 1.01 }} transition={{ duration: 0.2 }}
                >
-                  <Card className="w-full bg-white/5 border border-white/10 backdrop-blur-xl overflow-hidden rounded-xl">
+                  <Card className="
+                     w-full
+                     bg-white/[0.03]
+                     border border-white/5
+                     backdrop-blur-xl
+                     overflow-hidden
+                     rounded-xl
+                  ">
 
                      {/* HEADER */}
                      <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-slate-900/40">
