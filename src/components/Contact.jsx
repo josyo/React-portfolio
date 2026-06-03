@@ -4,24 +4,25 @@ import {
   HiOutlineDocumentText,
 } from "react-icons/hi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText("jolakunle50@gmail.com")
+    await navigator.clipboard.writeText("jolakunle50@gmail.com");
     setCopied(true);
 
     setTimeout(() => setCopied(false), 1500);
-  }
-   
+  };
+
   const links = [
     {
       icon: HiOutlineMail,
       label: "Email",
       value: "jolakunle50@gmail.com",
-      href: "mailto: jolakunle@gmail.com",
+      href: "mailto:jolakunle50@gmail.com",
+      action: "copy",
     },
     {
       icon: FaGithub,
@@ -48,11 +49,18 @@ export default function Contact() {
       id="contact-me"
       className="relative min-h-screen flex items-center px-6 sm:px-10 lg:px-20 overflow-hidden bg-slate-950 text-white"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-0 top-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full" />
-        <div className="absolute right-0 bottom-0 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full" />
-      </div>
+      {/* Floating Background Glow (NEW) */}
+      <motion.div
+        animate={{ y: [0, 20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-10 top-10 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full"
+      />
+
+      <motion.div
+        animate={{ y: [0, -20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-10 bottom-10 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full"
+      />
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
 
@@ -64,9 +72,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          {/* Availability Badge */}
+          {/* Availability Badge (UPGRADED) */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 text-sm">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+            </span>
             Open to internships & junior roles
           </div>
 
@@ -115,15 +126,48 @@ export default function Contact() {
               {links.map((link) => {
                 const Icon = link.icon;
 
-                return (
+                const isEmail = link.action === "copy";
+
+                return isEmail ? (
+                  <button
+                    key={link.label}
+                    onClick={copyEmail}
+                    className="
+                      flex items-center justify-between gap-4
+                      p-4 rounded-xl
+                      border border-transparent
+                      hover:border-white/10
+                      hover:bg-white/5
+                      transition-all duration-200
+                      w-full text-left
+                      group
+                    "
+                  >
+                    {/* Left */}
+                    <div className="flex items-center gap-4">
+                      <div className="p-2 rounded-lg bg-white/5 group-hover:bg-white/10 transition">
+                        <Icon size={18} />
+                      </div>
+
+                      <div>
+                        <p className="text-sm text-slate-400">
+                          Email
+                        </p>
+                        <p className="font-medium">
+                          {copied ? "Copied!" : link.value}
+                        </p>
+                      </div>
+                    </div>
+
+                    <span className="text-slate-500 group-hover:text-cyan-400 transition">
+                      →
+                    </span>
+                  </button>
+                ) : (
                   <a
                     key={link.label}
                     href={link.href}
-                    target={
-                      link.href.startsWith("http")
-                        ? "_blank"
-                        : undefined
-                    }
+                    target="_blank"
                     rel="noreferrer"
                     className="
                       flex items-center justify-between gap-4
@@ -151,7 +195,6 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    {/* Arrow */}
                     <span className="text-slate-500 group-hover:text-cyan-400 transition">
                       →
                     </span>
