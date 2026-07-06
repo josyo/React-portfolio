@@ -46,52 +46,24 @@ export const skillGroups = [
 
 export const projects = [
   {
-    title: "Job Application Tracker",
-    description:
-      "A full-stack platform for tracking applications, interviews and offers. Built to streamline the job search process with analytics and progress tracking.",
-
-    desktopImages: [
-      "/job-tracker-1.png",
-      "/job-tracker-2.png",
-      "job-tracker-3.png",
-    ],
-
-    mobileImages: [
-      "/projects/jobtracker/mobile-1.png",
-      "/projects/jobtracker/mobile-2.png",
-      "/projects/jobtracker/mobile-3.png",
-    ],
-
-    demo: "#",
-    github: "#",
-    tech: ["Next.js", "Tailwind", "Supabase", "ShadCN"],
+    id:          1,
+    title:       "AtlasPay / ZARCA",
+    description: "Enterprise payment gateway platform ...",
+    image:       "/projects/atlaspay.png",   // drop screenshots in /public/projects/
+    tech:        ["NestJS", "TypeScript", "PostgreSQL", "Redis"],
+    liveUrl:     null,       // null hides the Live button
+    codeUrl:     "https://github.com/josyo/...",
+    status:      "Production",  // "Production" | "Open Source" | "WIP"
   },
   {
-    title: "E-Commerce Platform",
-    description:
-      "Modern storefront experience featuring product discovery, filtering, responsive design and optimized performance.",
-
-    desktopImages: [
-      "/job-tracker.png",                          // was /public/job-tracker.png
-      "/projects/jobtracker/desktop-2.png",
-      "/projects/jobtracker/desktop-3.png",
-    ],
-    mobileImages: [],                               // add mobile shots when ready
-
-    demo: "#",
-    github: "#",
-    tech: ["React", "Tailwind", "Framer Motion"],
+    id:          2,
+    title:       "Sluice",
+    description: "Personal API scenario runner ...",
+    image:       "/projects/sluice.png",
+    tech:        ["React", "Zustand", "Zod", "Vite"],
+    liveUrl:     "https://...",
+    codeUrl:     "https://github.com/josyo/...",
+    status:      "Open Source",
   },
-  {
-    title: "Portfolio Website",
-    description:
-      "Developer portfolio focused on performance, motion design and modern user experience principles.",
-
-    desktopImages: ["/projects/portfolio.png"],    // was image:
-    mobileImages: [],                               // add mobile shots when ready
-
-    demo: "#",
-    github: "#",
-    tech: ["React", "Tailwind", "Framer Motion"],
-  },
+  // add more...
 ];
